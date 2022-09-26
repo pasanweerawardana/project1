@@ -1,0 +1,210 @@
+@import url(css/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: font-family 'Ubuntu', sans-serif;
+}
+
+.clear-fix{
+    clear: both;
+}
+
+h1{
+    font-size: 1.8rem;
+    line-height: 1.9rem;
+}
+h2{
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+}
+h3{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+h4{
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+h5{
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
+h6{
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+}
+
+
+ :root{
+    --header-height: 50px;
+    --nav-width:150px;
+    --layout-border-color:lightgray;
+}
+/* Layout */
+
+#header{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+height: var(--header-height);
+background-color: rgba(255, 255, 255, 0.87);
+border-bottom: 1px solid var(--layout-border-color);
+}
+
+#nav{
+position: fixed;
+left: 0;
+top: var(--header-height);
+bottom: 0;
+width: var(--nav-width);
+border-right:1px solid var(--layout-border-color);
+}
+
+#main{
+margin-left: var(--nav-width);
+margin-top: var(--header-height);
+}
+
+#footer{
+    text-align: center;
+    padding: 10px 10px 15px;
+    border-top:1px solid var(--layout-border-color);
+}
+
+#logo{
+    padding-left: 20px;
+}
+
+#smi-container{
+    float: right;
+    height: var(--header-height);
+    padding-right: 10px;
+
+}
+
+#smi-container .smi{
+    float: left;
+    width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 100%;
+    padding: 15px 10px;
+    cursor: pointer; 
+    transition: background-color 600ms,width 500ms;
+    font-weight: 500;
+}
+
+#smi-container .smi:nth-child(1):hover{
+    background-color: #3b5998;
+}
+#smi-container .smi:nth-child(2):hover{
+    background-color: #0e76a8;
+}
+#smi-container .smi:nth-child(3):hover{
+    background-color: #00acee;
+}
+#smi-container .smi:nth-child(4):hover{
+    background-color: #3f729b;
+}
+#smi-container .smi:nth-child(5):hover{
+    background-color: red;
+}
+#smi-container .smi:nth-child(6):hover{
+    background-color: black;
+}
+#smi-container .smi:nth-child(7):hover{
+    background-color: navy;
+}
+
+#smi-container .smi:not(.smi:last-child){
+    border-right: 1px solid var(--layout-border-color);
+    
+}
+
+#smi-container .smi ion-icon{
+    font-size: 1.3rem;
+    color: #666;
+    padding-right: 10px;
+    vertical-align: sub;
+}
+
+#smi-container .smi:hover{
+    width: 125px;
+    color: white;
+}
+
+#smi-container .smi:hover ion-icon{
+    color: white;
+}
+
+/* Navigation */
+
+#nav ul li{
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--layout-border-color);
+}
+
+#nav ul li:hover{
+    border-left: 3px solid red;
+}
+
+#nav ul li span{
+    transition: margin-left .4s cubic-bezier(0.71, 0.21, 0, 2.34);
+}
+
+#nav ul li:hover>span{
+    background-color: #d3d3d3;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.sub-menu ul{
+    display: none;
+    background-color: white;
+    border-top: 1px solid var(--layout-border-color);
+    border-right: 1px solid var(--layout-border-color);
+    min-width: 230px;
+    box-shadow: 4px 4px 6px 0 #0000004A;
+}
+
+.sub-menu li{
+    line-height: 1.2rem;
+}
+
+ul>.sub-menu:nth-child(2) ul{
+    width: 370px;
+}
+
+.sub-menu{
+    position: relative;
+}
+.sub-menu:hover::after{
+    border-left-color: red;
+}
+
+
+.sub-menu::after{
+    display: block;
+    content: "";
+    border-left: 5px solid black;
+    border-right: 5x solid transparent;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sub-menu:hover>ul{
+    display: block;
+    position: absolute;
+    left: calc(100% + 1px);
+    top: 0;
+}
